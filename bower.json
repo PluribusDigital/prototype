@@ -1,0 +1,23 @@
+{
+  "name": "taskinator",
+  "version": "0.0.0",
+  "authors": [
+    "Ben Morris <github@benmorris.net>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "bootstrap-sass-official":"latest"
+  },
+  "devDependencies": {
+
+  }
+}
