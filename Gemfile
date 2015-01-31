@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'turbolinks'
 gem 'sass', '3.2.19' 
 gem 'bower-rails'
+gem 'angular-rails-templates'
 
 gem 'puma'
 gem "foreman"
