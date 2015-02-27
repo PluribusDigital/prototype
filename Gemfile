@@ -32,10 +32,14 @@ end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'cucumber-rails', :require => false
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"
   gem "database_cleaner"
   gem "selenium-webdriver"
+  gem "teaspoon"
+  gem "poltergeist"
+  gem "phantomjs"
 end
 
 
