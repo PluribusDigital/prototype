@@ -11,4 +11,4 @@ Template Project for Rapid Prototype Creation - Rails, Angular.js, Cucumber, Cof
 `teaspoon` to run angular javascript unit tests
 
 # credit where credit is due
-This application is based on the [angular rails project](http://angular-rails.com/). There are a couple of tweaks, like using cucumber, but you can get up to speed on the what and why the sample code is doing by reviewing the great tutorial there.
+This application is based on the [angular rails book](http://angular-rails.com/). There are a couple of tweaks, like using cucumber, but you can get up to speed on the what and why the sample code is doing by reviewing the great tutorial there.
