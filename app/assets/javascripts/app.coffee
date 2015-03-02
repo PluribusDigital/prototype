@@ -1,4 +1,4 @@
-taskinator = angular.module('taskinator',[
+templicious = angular.module('templicious',[
   'templates',
   'ngRoute',
   'ngResource',
@@ -7,7 +7,7 @@ taskinator = angular.module('taskinator',[
   'angular-flash.flash-alert-directive'
 ])
 
-taskinator.config([ '$routeProvider', 'flashProvider',
+templicious.config([ '$routeProvider', 'flashProvider',
   ($routeProvider,flashProvider)->
 
     flashProvider.errorClassnames.push("alert-danger")
@@ -28,7 +28,7 @@ taskinator.config([ '$routeProvider', 'flashProvider',
         templateUrl: "show.html"
         controller: 'RecipeController'
       )
-      .when('recipe/:id/edit',
+      .when('/recipe/:id/edit',
         templateUrl: "form.html"
         controller: 'RecipeController'
       )

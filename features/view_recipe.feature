@@ -20,4 +20,4 @@ Feature: Viewing a Recipe
     And   I select "Baked Brussel Sprouts"
     When  I hit the button for "Back"
     Then  I should see the text "Baked Brussel Sprouts"
-    And   I should not see the text "Slather in oil"
+    And   I should NOT see the text "Slather in oil"

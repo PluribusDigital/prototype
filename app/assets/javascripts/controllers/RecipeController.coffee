@@ -22,11 +22,11 @@ controllers.controller("RecipeController", [ '$scope', '$routeParams', '$locatio
     
     $scope.back = -> $location.path("/")
 
-    $scope.edit = -> $location.path("/recipes/#{$scope.recipe.id}/edit")
+    $scope.edit = -> $location.path("/recipe/#{$scope.recipe.id}/edit")
 
     $scope.cancel = ->
       if $scope.recipe.id
-        $location.path("/recipes/#{$scope.recipe.id}")
+        $location.path("/recipe/#{$scope.recipe.id}")
       else
         $location.path("/")
 
@@ -34,11 +34,11 @@ controllers.controller("RecipeController", [ '$scope', '$routeParams', '$locatio
       onError = (_httpResponse)-> flash.error = "Something went wrong"
       if $scope.recipe.id
         $scope.recipe.$save(
-          ( ()-> $location.path("/recipes/#{$scope.recipe.id}") ),
+          ( ()-> $location.path("/recipe/#{$scope.recipe.id}") ),
           onError)
       else
         Recipe.create($scope.recipe,
-          ( (newRecipe)-> $location.path("/recipes/#{newRecipe.id}") ),
+          ( (newRecipe)-> $location.path("/recipe/#{newRecipe.id}") ),
           onError
         )
 

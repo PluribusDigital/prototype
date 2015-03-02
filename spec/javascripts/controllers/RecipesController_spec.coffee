@@ -28,7 +28,7 @@ describe "RecipesController", ->
                          $location: location)
     )
 
-  beforeEach(module("taskinator"))
+  beforeEach(module("templicious"))
   beforeEach(setupController())
 
   afterEach ->

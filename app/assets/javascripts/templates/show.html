@@ -10,7 +10,7 @@
       {{recipe.instructions}}
     </p>
   </article>
-  <button ng-click="back()" class="btn btn-default">
-    &larr; Back
-  </button>
+  <button ng-click="back()"             class="btn btn-default" >&larr; Back</button>
+  <button ng-click="edit(recipe.id)"    class="btn btn-info"    >Edit</button>
+  <button ng-click="delete(recipe.id)"  class="btn btn-danger"  >Delete</button>
 </section>

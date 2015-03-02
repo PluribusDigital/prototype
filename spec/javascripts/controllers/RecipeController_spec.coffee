@@ -33,7 +33,7 @@ describe "RecipeController", ->
                                 $scope: scope)
     )
 
-  beforeEach(module("taskinator"))
+  beforeEach(module("templicious"))
 
   afterEach ->
     httpBackend.verifyNoOutstandingExpectation()
@@ -68,7 +68,7 @@ describe "RecipeController", ->
       scope.recipe.instructions = newRecipe.instructions
       scope.save()
       httpBackend.flush()
-      expect(location.path()).toBe("/recipes/#{newRecipe.id}")
+      expect(location.path()).toBe("/recipe/#{newRecipe.id}")
 
   describe 'update', ->
     updatedRecipe =
@@ -86,7 +86,7 @@ describe "RecipeController", ->
       scope.recipe.instructions = updatedRecipe.instructions
       scope.save()
       httpBackend.flush()
-      expect(location.path()).toBe("/recipes/#{scope.recipe.id}")
+      expect(location.path()).toBe("/recipe/#{scope.recipe.id}")
 
   describe 'delete' ,->
     beforeEach ->

@@ -14,7 +14,7 @@ Then(/^I should see the text "(.*?)"$/) do |text|
   expect(page).to have_content(text)
 end
 
-Then(/^I should not see the text "(.*?)"$/) do |text|
+Then(/^I should NOT see the text "(.*?)"$/) do |text|
   expect(page).to_not have_content(text)
 end
 
