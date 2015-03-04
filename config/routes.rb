@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   resources :recipes
+  resources :farmers_markets, only: [:index, :show]
 
 
   # Example of regular route:
