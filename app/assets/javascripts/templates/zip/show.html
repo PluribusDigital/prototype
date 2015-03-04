@@ -1,0 +1,11 @@
+<h1>{{zip}}</h1>
+
+<h2>Farmers Markets</h2>
+<ul ng-repeat="market in farmersMarkets">
+  <li>{{market.marketname}}</li>
+</ul>
+
+<h2>Social Security Beneficiaries</h2>
+<ul ng-repeat="(key,value) in socialSecurityBeneficiaries">
+  <li><strong>{{key}}:</strong> {{value}}</li>
+</ul>

@@ -32,6 +32,10 @@ templicious.config([ '$routeProvider', 'flashProvider',
         templateUrl: "form.html"
         controller: 'RecipeController'
       )
+      .when('/zip/:id',
+        templateUrl: "zip/show.html"
+        controller: 'ZipController'
+      )
 ])
 
 controllers = angular.module('controllers',[])

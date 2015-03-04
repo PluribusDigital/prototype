@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :recipes
   resources :farmers_markets, only: [:index, :show]
+  resources :social_security_beneficiaries, only: [:show]
 
 
   # Example of regular route:

@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # HTTParty to interact with external REST APIs
 gem 'httparty'
+# Be able to read/write MS Excel (.xlsx) files
+gem 'rubyXL'
 
 # Use jquery as the JavaScript library  
 # gem 'jquery-rails'

@@ -11,16 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131183949) do
+ActiveRecord::Schema.define(version: 20150304183558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.text     "instructions"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "service_caches", force: :cascade do |t|
+    t.string   "service"
+    t.string   "key"
+    t.hstore   "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

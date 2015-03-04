@@ -1,5 +1,6 @@
 class FarmersMarketDirectoryService
-  
+  # DOCS    http://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html
+
   include HTTParty
   base_uri 'http://search.ams.usda.gov'
 
