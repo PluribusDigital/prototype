@@ -1,4 +1,4 @@
-class FarmersMarketDirectoryService
+class FarmersMarketDirectoryService 
   # DOCS    http://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html
 
   include HTTParty

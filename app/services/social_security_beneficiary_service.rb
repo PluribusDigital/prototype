@@ -1,12 +1,7 @@
-class SocialSecurityBeneficiaryService
-  # SOURCE  http://www.ssa.gov/policy/docs/statcomps/oasdi_zip/2013/oasdi_zip13.xlsx
-  # DOCS    http://www.huduser.org/portal/datasets/usps_crosswalk.html
-  #         https://catalog.data.gov/dataset/oasdi-beneficiaries-by-state-and-zip-code
-
-  def self.find(zip)
-    result = ServiceCache.where(service:service_name, key:zip)
-    (result.length > 0) ? result[0].data : nil
-  end
+class SocialSecurityBeneficiaryService < ServiceCache
+  # DATA  http://www.ssa.gov/policy/docs/statcomps/oasdi_zip/2013/oasdi_zip13.xlsx
+  # DOCS  http://www.huduser.org/portal/datasets/usps_crosswalk.html
+  #       https://catalog.data.gov/dataset/oasdi-beneficiaries-by-state-and-zip-code
 
   def self.read_workbook
     puts "reading workbook "
@@ -61,19 +56,10 @@ private
     }
   end
 
-  def self.service_name 
-    "SocialSecurityBeneficiary"
-  end
-
   def self.clean_zip(zip)
     z = zip.to_s
     zero_pad = (z.length < 5) ? "0"*(5-z.length) : ""
     return zero_pad + z
-  end
-
-  def self.write_cache(zip,data)
-    cache = ServiceCache.find_or_initialize_by(service:service_name,key:zip)
-    cache.update(data:data)
   end
 
 end
