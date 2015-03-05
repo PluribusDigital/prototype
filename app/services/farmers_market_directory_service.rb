@@ -4,23 +4,23 @@ class FarmersMarketDirectoryService
   include HTTParty
   base_uri 'http://search.ams.usda.gov'
 
-  def base_path
+  def self.base_path
     '/farmersmarkets/v1/data.svc/'
   end
 
-  def zip_search(zipcode)
+  def self.zip_search(zipcode)
     url = base_path + "zipSearch?zip=" + zipcode
-    self.class.get(url)['results']
+    self.get(url)['results']
   end
 
-  def lat_long_search(lat,long)
+  def self.lat_long_search(lat,long)
     url = base_path + "locSearch?lat=" + lat.to_s + "&lng=" + long.to_s
-    self.class.get(url)['results']
+    self.get(url)['results']
   end
 
-  def market_detail(id)
+  def self.find(id)
     url = base_path + "mktDetail?id=" + id
-    self.class.get(url)["marketdetails"]
+    self.get(url)["marketdetails"]
   end
 
 end
