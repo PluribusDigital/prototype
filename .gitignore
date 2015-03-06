@@ -8,6 +8,10 @@
 /.bundle
 /bower_components
 
+# ignore Visual Studio project files
+*.sln
+*.suo
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal

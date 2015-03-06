@@ -1,0 +1,56 @@
+=== Bundle Install Started =======
+
+Problem: Ruby 2.2 required
+	Solution: Change ruby version in Gemfile
+
+Problem: Wrong Version of Rails
+	Solution: Install railsinstaller-3.1.0
+
+Problem: Bundle Install gives SSL error on rake-10.4.2
+	Solution: Manually install rake-10.4.2.gem
+
+Problem: Still getting SSL error
+	Solution: https://gist.github.com/luislavena/f064211759ee0f806c88
+
+Problem: An error occurred while installing puma (2.11.0), and Bundler cannot continue.
+	Symptoms: checking for BIO_read() in -lcrypto
+	Info: https://github.com/puma/puma/issues/202
+	Hack: comment out 'gem puma' in the Gemfile
+
+=== Bundle Install Completed =======
+
+=== Bundle Exec cucumber ===========
+
+Problem: Immediate Failure
+	Symptoms: No source of timezone data could be found. 
+	Info: http://tzinfo.github.io/datasourcenotfound
+	Solution: gem install tzinfo-data
+
+Problem: Database Connection Failure
+	Symptoms: [...]gems/activerecord-4.2.0/lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `initialize'
+	Solution: Install postgresql 9.3.6.1
+
+Problem: Database Connection Failure
+	Symptoms: [...]gems/activerecord-4.2.0/lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `initialize'
+	Solution: Add user = 'templicious' and password from database.yml 
+		(can create database = true)
+
+Problem: Database Connection Failure
+	Symptoms: [...]gems/activerecord-4.2.0/lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `initialize'
+	Solution: Configure postgres to use the correct port 5432
+
+=== rake db:setup ================
+
+Problem: Cannot create database
+	Symptoms: Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "pool"=>5, "database"=>"templicious_development"}
+		      fe_sendauth: no password supplied
+	Info: http://www.postgresql.org/docs/current/static/libpq-pgpass.html
+	HACK: Temporary put in username and password into database.yaml
+
+=== rake db:setup - Success ======
+
+=== Bundle Exec cucumber ===========
+
+Problem: Failure
+	Symptoms: WARNING: cannot load such file -- 2.1/gherkin_lexer_en
+			  Couldn't load 2.1/gherkin_lexer_en

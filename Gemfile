@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.1.5'
 
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -27,7 +27,7 @@ gem 'sass', '3.2.19'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
-gem 'puma'
+# gem 'puma'
 gem "foreman"
 group :production, :staging do
   gem "rails_12factor"
@@ -47,6 +47,8 @@ group :test, :development do
   gem "phantomjs"
 end
 
+# Windows
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
