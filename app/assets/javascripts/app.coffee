@@ -17,19 +17,19 @@ templicious.config([ '$routeProvider', 'flashProvider',
 
     $routeProvider
       .when('/',
-        templateUrl: "index.html"
+        templateUrl: "recipe/index.html"
         controller: 'RecipesController'
       )
       .when('/recipe/new',
-        templateUrl: "form.html"
+        templateUrl: "recipe/form.html"
         controller:  'RecipeController'
       )
       .when('/recipe/:id',
-        templateUrl: "show.html"
+        templateUrl: "recipe/show.html"
         controller: 'RecipeController'
       )
       .when('/recipe/:id/edit',
-        templateUrl: "form.html"
+        templateUrl: "recipe/form.html"
         controller: 'RecipeController'
       )
       .when('/zip/:id',
