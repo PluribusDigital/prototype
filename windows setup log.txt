@@ -15,7 +15,7 @@ Problem: Still getting SSL error
 Problem: An error occurred while installing puma (2.11.0), and Bundler cannot continue.
 	Symptoms: checking for BIO_read() in -lcrypto
 	Info: https://github.com/puma/puma/issues/202
-	Hack: comment out 'gem puma' in the Gemfile
+	HACK: comment out 'gem puma' in the Gemfile
 
 === Bundle Install Completed =======
 
@@ -32,11 +32,6 @@ Problem: Database Connection Failure
 
 Problem: Database Connection Failure
 	Symptoms: [...]gems/activerecord-4.2.0/lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `initialize'
-	Solution: Add user = 'templicious' and password from database.yml 
-		(can create database = true)
-
-Problem: Database Connection Failure
-	Symptoms: [...]gems/activerecord-4.2.0/lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `initialize'
 	Solution: Configure postgres to use the correct port 5432
 
 === rake db:setup ================
@@ -45,7 +40,11 @@ Problem: Cannot create database
 	Symptoms: Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "pool"=>5, "database"=>"templicious_development"}
 		      fe_sendauth: no password supplied
 	Info: http://www.postgresql.org/docs/current/static/libpq-pgpass.html
-	HACK: Temporary put in username and password into database.yaml
+	      http://stackoverflow.com/questions/8686215/failing-to-access-environment-variables-within-database-yml-file
+	Solution: Add user 'jfarley' to postgres (same as the Windows login)
+	          Set password to some value
+	          Create an environment variable 'TASKINATOR_DATABASE_PASSWORD' and set the value to the password in step 2
+			  Updated database.yml to get the password from the environment variable
 
 === rake db:setup - Success ======
 
@@ -54,3 +53,22 @@ Problem: Cannot create database
 Problem: Failure
 	Symptoms: WARNING: cannot load such file -- 2.1/gherkin_lexer_en
 			  Couldn't load 2.1/gherkin_lexer_en
+	Info: https://github.com/cucumber/gherkin/issues/320
+	Partial solution: gem install gherkin --platform=ruby
+
+	Symptoms: WARNING: cannot load such file -- 2.1/gherkin_lexer_en
+			  Couldn't load 2.1/gherkin_lexer_en
+	Info: https://github.com/cucumber/gherkin/issues/273
+
+!!!! Abandoning For Now
+
+=== Bundle Exec rspec ==============
+
+Problem: Failure
+	Symptoms: [...]/2.1.0/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:274:
+	          in `require': cannot load such file -- rails_helper (LoadError)
+	Info: http://stackoverflow.com/questions/25800122/error-when-trying-to-run-rspec-require-cannot-load-such-file-rails-helper
+	Not a Solution:  rails generate rspec:install
+	Solution: Change 'spec/models/service_cache_spec.rb' to require 'spec_helper' not 'rails_helper' since that is the file in the spec directory
+
+=== Bundle Exec rspec - Success ====
