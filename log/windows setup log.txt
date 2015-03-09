@@ -105,8 +105,7 @@ Problem: Failure
 	Symptoms: No lexer was found for en (cannot load such file -- gherkin/lexer/en). 
 	          Supported languages are listed in gherkin/i18n.json. (Gherkin::I18n::LexerNotFound)
 	          C:/Ruby21/lib/ruby/gems/2.1.0/gems/gherkin-2.12.2-x86-mingw32/lib/gherkin/i18n.rb:108:in `rescue in lexer'
-
-!!!! Abandoning For Now
+	Solution: Copy lexer files from earlier version 'gherkin-2.12.2\lib\gherkin\lexer' -> 'gherkin-2.12.2-x86-mingw32\lib\gherkin\lexer'
 
 === bundle exec rspec =================
 === bundle exec teaspoon ==============
@@ -114,8 +113,18 @@ Problem: Failure
 Problem: Hangs/Error
 	Symptoms: Error: Teaspoon::UnknownSuite: Unknown suite "default\"
 	          C:/Ruby21/lib/ruby/gems/2.1.0/gems/teaspoon-0.8.0/lib/teaspoon/suite.rb:106:in `suite_configuration'
+	Info: https://github.com/modeset/teaspoon/wiki/Using-PhantomJS
+	Partial Solution: Install PhantomJS for Windows
 
-!!!! Abandoning For Now
+Problem: Hangs/Error
+	Symptoms: C:/Ruby21/bin/teaspoon: No such file or directory - which phantomjs
+	Solution: Copy PhantomJS to a directory that is in the environment path (e.g. Ruby\bin)
+
+Problem: Hangs/Error
+	Symptoms: Error: Teaspoon::UnknownSuite: Unknown suite "default\"
+	          C:/Ruby21/lib/ruby/gems/2.1.0/gems/teaspoon-0.8.0/lib/teaspoon/suite.rb:106:in `suite_configuration'
+	Info: https://github.com/modeset/teaspoon/issues/271
+	Solution: https://github.com/modeset/teaspoon/commit/0c5dd7fbf76cb29ff4616c27ae731cdd6c301bb3
 
 === browser test of / =================
 === browser test of /#/zip/20815 ======
