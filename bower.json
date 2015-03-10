@@ -19,6 +19,7 @@
     "angular-resource":           "latest",
     "angular-flash":              "latest",
     "angular-mocks":              "latest",
+    "d3":                         "latest",
     "bootstrap-sass-official":    "latest"
   },
   "devDependencies": {
