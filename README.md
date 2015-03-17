@@ -14,3 +14,10 @@ Template Project for Rapid Prototype Creation - Rails, Angular.js, Cucumber, Cof
 
 # credit where credit is due
 This application is based on the [angular rails book](http://angular-rails.com/). There are a couple of tweaks, like using cucumber, but you can get up to speed on the what and why the sample code is doing by reviewing the great tutorial there.
+
+
+# Generating sample data
+
+Placeholder data services can be run to import csv files from `rails console`
+* `> FdicSdiService.read_definitions` and `> FdicSdiService.read_files` (latter takes a really long time)
+* `> SocialSecurityBeneficiaryService.read_workbook`

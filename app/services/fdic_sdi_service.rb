@@ -28,7 +28,7 @@ class FdicSdiService < ServiceCache
         help_link = htmlrow.css("td")[0].css("a").first["href"]
         name      = htmlrow.css("td")[1].text.strip
         label     = htmlrow.css("td")[2].text.strip
-        write_cache "data_dictionary", {"#{name}": {'category': category, 'help_link': help_link, 'name': name, 'label': label}}
+        write_cache "data_dictionary", { name => {'category' => category, 'help_link' => help_link, 'name' => name, 'label' => label} }
       end
       i +=1
       break if i > 30
