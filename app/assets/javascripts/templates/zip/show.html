@@ -49,11 +49,9 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">{{zip}}</h1>
 
-      <div class="row placeholders">
+<!--      <div class="row placeholders">
         <div class="col-xs-6 col-sm-3 placeholder">
-          <span class="badge badge-jumbo">{{farmersMarkets.length}}</span>
-          <h4>Farmers Markets</h4>
-          <span class="text-muted">within {{farmersMarkets[farmersMarkets.length-1].distance}} miles</span>
+
         </div>
         <div class="col-xs-6 col-sm-3 placeholder">
           <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
@@ -70,35 +68,43 @@
           <h4>Label</h4>
           <span class="text-muted">Something else</span>
         </div>
-      </div>
+      </div>-->
 
-      <h2 class="sub-header">Nearby Farmers Markets</h2>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <th>Distance (mi)</th>
-            <th>Market Name</th>
-          </thead>
-          <tbody ng-repeat="market in farmersMarkets">
-            <tr>
-              <td>{{market.distance}}</td>
-              <td>{{market.name}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div><!-- table-responsive -->
-
-      <h2 class="sub-header">Social Security Beneficiaries</h2>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <tbody ng-repeat="(key,value) in socialSecurityBeneficiaries">
-            <tr>
-              <th>{{key}}</th>
-              <td>{{value}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div><!-- table-responsive -->
+        <tabset justified="true">
+            <tab class="table-responsive">
+                <tab-heading>
+                    <span class="badge badge-jumbo">{{farmersMarkets.length}}</span>
+                    <h4>Farmers Markets</h4>
+                    <span class="text-muted">within {{farmersMarkets[farmersMarkets.length-1].distance}} miles</span>
+                </tab-heading>
+                <table class="table table-striped">
+                    <thead>
+                        <th>Distance (mi)</th>
+                        <th>Market Name</th>
+                    </thead>
+                    <tbody ng-repeat="market in farmersMarkets">
+                        <tr>
+                            <td>{{market.distance}}</td>
+                            <td>{{market.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </tab>
+            <tab class="table-responsive">
+                <tab-heading>
+                    <span class="badge badge-jumbo">&circledS;</span>
+                    <h4>Social Security Beneficiaries</h4>
+                </tab-heading>
+                <table class="table table-striped">
+                    <tbody ng-repeat="(key,value) in socialSecurityBeneficiaries">
+                        <tr>
+                            <th>{{key}}</th>
+                            <td>{{value}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </tab>
+        </tabset>
 
     </div> <!-- col -->
   </div><!-- row -->

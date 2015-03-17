@@ -1,6 +1,6 @@
 var templicious = angular.module('templicious', [
     'templates', 'ngRoute', 'ngResource', 'controllers', 'angular-flash.service',
-    'angular-flash.flash-alert-directive'
+    'angular-flash.flash-alert-directive', 'ui.bootstrap'
 ]);
 
 templicious.config([
