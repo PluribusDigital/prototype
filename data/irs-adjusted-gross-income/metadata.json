@@ -1,0 +1,541 @@
+[
+ {
+  "key": "fips",
+  "description": "The State Federal Information Processing System (FIPS) code",
+  "csv_name": "STATEFIPS",
+  "reference": "01-56",
+  "type": "Char"
+ },
+ {
+  "key": "state",
+  "description": "The State associated with the ZIP code",
+  "csv_name": "STATE",
+  "reference": "Two-digit State abbreviation code",
+  "type": "Char"
+ },
+ {
+  "key": "zip",
+  "description": "5-digit Zip code",
+  "csv_name": "ZIPCODE",
+  "reference": "zip code",
+  "type": "Char"
+ },
+ {
+  "key": "agi_group",
+  "description": "Size of adjusted gross income",
+  "csv_name": "AGI_STUB",
+  "reference": "bin",
+  "type": "Count"
+ },
+ {
+  "key": "total_returns",
+  "description": "Number of returns",
+  "csv_name": "N1",
+  "reference": "count",
+  "type": "Count"
+ },
+ {
+  "key": "single_returns",
+  "description": "Number of single returns",
+  "csv_name": "MARS1",
+  "reference": "Filing status is single",
+  "type": "Count"
+ },
+ {
+  "key": "joint_returns",
+  "description": "Number of joint returns",
+  "csv_name": "MARS2",
+  "reference": "Filing status is married filing jointly",
+  "type": "Count"
+ },
+ {
+  "key": "head_of_household_returns",
+  "description": "Number of head of household returns",
+  "csv_name": "MARS4",
+  "reference": "Filing status is head of household",
+  "type": "Count"
+ },
+ {
+  "key": "returns_with_paid_preparers_signature",
+  "description": "Number of returns with paid preparer's signature",
+  "csv_name": "PREP",
+  "reference": ".",
+  "type": "Count"
+ },
+ {
+  "key": "exemptions",
+  "description": "Number of exemptions",
+  "csv_name": "N2",
+  "reference": "1040:6d",
+  "type": "Count"
+ },
+ {
+  "key": "dependents",
+  "description": "Number of dependents",
+  "csv_name": "NUMDEP",
+  "reference": "1040:6c",
+  "type": "Count"
+ },
+ {
+  "key": "adjusted_gross_income",
+  "description": "Adjusted gross income (AGI) [2]",
+  "csv_name": "A00100",
+  "reference": "1040:37 / 1040A:21 / 1040EZ:4",
+  "type": "Num"
+ },
+ {
+  "key": "salaries_and_wages",
+  "description": "Number of returns with salaries and wages",
+  "csv_name": "N00200",
+  "reference": "1040:7 / 1040A:7 / 1040EZ:1",
+  "type": "Count"
+ },
+ {
+  "key": "salaries_and_wages_amount",
+  "description": "Salaries and wages amount",
+  "csv_name": "A00200",
+  "reference": "1040:7 / 1040A:7 / 1040EZ:1",
+  "type": "Num"
+ },
+ {
+  "key": "taxable_interest",
+  "description": "Number of returns with taxable interest",
+  "csv_name": "N00300",
+  "reference": "1040:8a / 1040A:8a / 1040EZ:2",
+  "type": "Count"
+ },
+ {
+  "key": "taxable_interest_amount",
+  "description": "Taxable interest amount",
+  "csv_name": "A00300",
+  "reference": "1040:8a / 1040A:8a / 1040EZ:2",
+  "type": "Num"
+ },
+ {
+  "key": "ordinary_dividends",
+  "description": "Number of returns with ordinary dividends",
+  "csv_name": "N00600",
+  "reference": "1040:9a / 1040A:9a",
+  "type": "Count"
+ },
+ {
+  "key": "ordinary_dividends_amount",
+  "description": "Ordinary dividends amount",
+  "csv_name": "A00600",
+  "reference": "1040:9a / 1040A:9a",
+  "type": "Num"
+ },
+ {
+  "key": "qualified_dividends",
+  "description": "Number of returns with qualified dividends",
+  "csv_name": "N00650",
+  "reference": "1040:9b / 1040A:9b",
+  "type": "Count"
+ },
+ {
+  "key": "qualified_dividends_amount",
+  "description": "Qualified dividends amount [3]",
+  "csv_name": "A00650",
+  "reference": "1040:9b / 1040A:9b",
+  "type": "Num"
+ },
+ {
+  "key": "business_or_professional_net_income_less_loss",
+  "description": "Number of returns with business or professional net income (less loss)",
+  "csv_name": "N00900",
+  "reference": "1040:12",
+  "type": "Count"
+ },
+ {
+  "key": "business_or_professional_net_income_less_loss_amount",
+  "description": "Business or professional net income (less loss) amount",
+  "csv_name": "A00900",
+  "reference": "1040:12",
+  "type": "Num"
+ },
+ {
+  "key": "farm_returns",
+  "description": "Number of farm returns",
+  "csv_name": "SCHF",
+  "reference": "1040:18",
+  "type": "Count"
+ },
+ {
+  "key": "net_capital_gain_less_loss",
+  "description": "Number of returns with net capital gain (less loss)",
+  "csv_name": "N01000",
+  "reference": "1040:13  1040A:10",
+  "type": "Count"
+ },
+ {
+  "key": "net_capital_gain_less_loss_amount",
+  "description": "Net capital gain (less loss) amount",
+  "csv_name": "A01000",
+  "reference": "1040:13  1040A:10",
+  "type": "Num"
+ },
+ {
+  "key": "taxable_individual_retirement_arrangements_distributions",
+  "description": "Number of returns with taxable individual retirement arrangements distributions",
+  "csv_name": "N01400",
+  "reference": "1040:15b / 1040:11b",
+  "type": "Count"
+ },
+ {
+  "key": "taxable_individual_retirement_arrangements_distributions_amount",
+  "description": "Taxable individual retirement arrangements distributions amount",
+  "csv_name": "A01400",
+  "reference": "1040:15b / 1040:11b",
+  "type": "Num"
+ },
+ {
+  "key": "taxable_pensions_and_annuities",
+  "description": "Number of returns with taxable pensions and annuities",
+  "csv_name": "N01700",
+  "reference": "1040:16b / 1040A:12b",
+  "type": "Count"
+ },
+ {
+  "key": "taxable_pensions_and_annuities_amount",
+  "description": "Taxable pensions and annuities amount",
+  "csv_name": "A01700",
+  "reference": "1040:16b / 1040A:12b",
+  "type": "Num"
+ },
+ {
+  "key": "unemployment_compensation",
+  "description": "Number of returns with unemployment compensation",
+  "csv_name": "N02300",
+  "reference": "1040:19 / 1040A:13 / 1040EZ:3",
+  "type": "Count"
+ },
+ {
+  "key": "unemployment_compensation_amount",
+  "description": "Unemployment compensation amount [4]",
+  "csv_name": "A02300",
+  "reference": "1040:19 / 1040A:13 / 1040EZ:3",
+  "type": "Num"
+ },
+ {
+  "key": "taxable_social_security_benefits",
+  "description": "Number of returns with taxable Social Security benefits",
+  "csv_name": "N02500",
+  "reference": "1040:20b / 1040A:14b",
+  "type": "Count"
+ },
+ {
+  "key": "taxable_social_security_benefits_amount",
+  "description": "Taxable Social Security benefits amount",
+  "csv_name": "A02500",
+  "reference": "1040:20b / 1040A:14b",
+  "type": "Num"
+ },
+ {
+  "key": "self_employment_retirement_plans",
+  "description": "Number of returns with self-employment retirement plans",
+  "csv_name": "N03300",
+  "reference": "1040:28",
+  "type": "Count"
+ },
+ {
+  "key": "self_employment_retirement_plans_amount",
+  "description": "Self-employment retirement plans amount",
+  "csv_name": "A03300",
+  "reference": "1040:28",
+  "type": "Num"
+ },
+ {
+  "key": "itemized_deductions_1",
+  "description": "Number of returns with itemized deductions",
+  "csv_name": "N04470",
+  "reference": "1040:40",
+  "type": "Count"
+ },
+ {
+  "key": "itemized_deductions_2",
+  "description": "Number of returns with itemized deductions",
+  "csv_name": "N00101",
+  "reference": "1040:40",
+  "type": "Count"
+ },
+ {
+  "key": "agi_for_itemized_returns_amount",
+  "description": "Amount of AGI for itemized returns",
+  "csv_name": "A00101",
+  "reference": "1040:37",
+  "type": "Num"
+ },
+ {
+  "key": "total_itemized_deductions_amount",
+  "description": "Total itemized deductions amount",
+  "csv_name": "A04470",
+  "reference": "1040:40",
+  "type": "Num"
+ },
+ {
+  "key": "state_and_local_income_taxes",
+  "description": "Number of returns with State and local income taxes",
+  "csv_name": "N18425",
+  "reference": "Schedule A:5a",
+  "type": "Count"
+ },
+ {
+  "key": "state_and_local_income_taxes_amount",
+  "description": "State and local income taxes amount",
+  "csv_name": "A18425",
+  "reference": "Schedule A:5a",
+  "type": "Num"
+ },
+ {
+  "key": "state_and_local_general_sales_tax",
+  "description": "Number of returns with State and local general sales tax",
+  "csv_name": "N18450",
+  "reference": "Schedule A:5b",
+  "type": "Count"
+ },
+ {
+  "key": "state_and_local_general_sales_tax_amount",
+  "description": "State and local general sales tax amount",
+  "csv_name": "A18450",
+  "reference": "Schedule A:5b",
+  "type": "Num"
+ },
+ {
+  "key": "real_estate_taxes",
+  "description": "Number of returns with real estate taxes",
+  "csv_name": "N18500",
+  "reference": "Schedule A:6",
+  "type": "Count"
+ },
+ {
+  "key": "real_estate_taxes_amount",
+  "description": "Real estate taxes amount",
+  "csv_name": "A18500",
+  "reference": "Schedule A:6",
+  "type": "Num"
+ },
+ {
+  "key": "taxes_paid",
+  "description": "Number of returns with taxes paid",
+  "csv_name": "N18300",
+  "reference": "Schedule A:9",
+  "type": "Count"
+ },
+ {
+  "key": "taxes_paid_amount",
+  "description": "Taxes paid amount",
+  "csv_name": "A18300",
+  "reference": "Schedule A:9",
+  "type": "Num"
+ },
+ {
+  "key": "mortgage_interest_paid",
+  "description": "Number of returns with mortgage interest paid",
+  "csv_name": "N19300",
+  "reference": "Schedule A:10",
+  "type": "Count"
+ },
+ {
+  "key": "mortgage_interest_paid_amount",
+  "description": "Mortgage interest paid amount",
+  "csv_name": "A19300",
+  "reference": "Schedule A:10",
+  "type": "Num"
+ },
+ {
+  "key": "contributions",
+  "description": "Number of returns with contributions",
+  "csv_name": "N19700",
+  "reference": "Schedule A:19",
+  "type": "Count"
+ },
+ {
+  "key": "contributions_amount",
+  "description": "Contributions amount",
+  "csv_name": "A19700",
+  "reference": "Schedule A:19",
+  "type": "Num"
+ },
+ {
+  "key": "taxable_income",
+  "description": "Number of returns with taxable income",
+  "csv_name": "N04800",
+  "reference": "1040:43 / 1040A:27 / 1040EZ:6",
+  "type": "Count"
+ },
+ {
+  "key": "taxable_income_amount",
+  "description": "Taxable income amount",
+  "csv_name": "A04800",
+  "reference": "1040:43 / 1040A:27 / 1040EZ:6",
+  "type": "Num"
+ },
+ {
+  "key": "alternative_minimum_tax",
+  "description": "Number of returns with alternative minimum tax ",
+  "csv_name": "N09600",
+  "reference": "1040:45",
+  "type": "Count"
+ },
+ {
+  "key": "alternative_minimum_tax_amount",
+  "description": "Alternative minimum tax amount",
+  "csv_name": "A09600",
+  "reference": "1040:45",
+  "type": "Num"
+ },
+ {
+  "key": "total_tax_credits",
+  "description": "Number of returns with total tax credits",
+  "csv_name": "N07100",
+  "reference": "1040:54 / 1040A:34",
+  "type": "Count"
+ },
+ {
+  "key": "total_tax_credits_amount",
+  "description": "Total tax credits amount",
+  "csv_name": "A07100",
+  "reference": "1040:54 / 1040A:34",
+  "type": "Num"
+ },
+ {
+  "key": "child_and_dependent_care_credit",
+  "description": "Number of returns with child and dependent care credit",
+  "csv_name": "N07180",
+  "reference": "1040:48 / 1040A:29",
+  "type": "Count"
+ },
+ {
+  "key": "child_and_dependent_care_credit_amount",
+  "description": "Child and dependent care credit amount",
+  "csv_name": "A07180",
+  "reference": "1040:48 / 1040A:29",
+  "type": "Num"
+ },
+ {
+  "key": "child_tax_credit",
+  "description": "Number of returns with child tax credit",
+  "csv_name": "N07220",
+  "reference": "1040:51 / 1040A:33",
+  "type": "Count"
+ },
+ {
+  "key": "child_tax_credit_amount",
+  "description": "Child tax credit amount",
+  "csv_name": "A07220",
+  "reference": "1040:51 / 1040A:33",
+  "type": "Num"
+ },
+ {
+  "key": "residential_energy_tax_credit",
+  "description": "Number of returns with residential energy tax credit",
+  "csv_name": "N07260",
+  "reference": "1040:52",
+  "type": "Count"
+ },
+ {
+  "key": "residential_energy_tax_credit_amount",
+  "description": "Residential energy tax credit amount",
+  "csv_name": "A07260",
+  "reference": "1040:52",
+  "type": "Num"
+ },
+ {
+  "key": "additional_child_tax_credit",
+  "description": "Number of returns with additional child tax credit",
+  "csv_name": "N11070",
+  "reference": "1040:65 / 1040A:39",
+  "type": "Count"
+ },
+ {
+  "key": "additional_child_tax_credit_amount",
+  "description": "Additional child tax credit amount",
+  "csv_name": "A11070",
+  "reference": "1040:65 / 1040A:39",
+  "type": "Num"
+ },
+ {
+  "key": "earned_income_credit",
+  "description": "Number of returns with earned income credit",
+  "csv_name": "N59660",
+  "reference": "1040:64a / 1040A:38a / 1040EZ:8b",
+  "type": "Count"
+ },
+ {
+  "key": "earned_income_credit_amount",
+  "description": "Earned income credit amount [5]",
+  "csv_name": "A59660",
+  "reference": "1040:64a / 1040A:38a / 1040EZ:8b",
+  "type": "Num"
+ },
+ {
+  "key": "excess_earned_income_credit",
+  "description": "Number of returns with excess earned income credit",
+  "csv_name": "N59720",
+  "reference": "1040:64a / 1040A:38a / 1040EZ:8b",
+  "type": "Count"
+ },
+ {
+  "key": "excess_earned_income_credit_refundable_amount",
+  "description": "Excess earned income credit (refundable) amount [6]",
+  "csv_name": "A59720",
+  "reference": "1040:64a / 1040A:38a / 1040EZ:8b",
+  "type": "Num"
+ },
+ {
+  "key": "income_tax",
+  "description": "Number of returns with income tax",
+  "csv_name": "N06500",
+  "reference": "1040:55 / 1040A:35 / 1040EZ:10",
+  "type": "Count"
+ },
+ {
+  "key": "income_tax_amount",
+  "description": "Income tax amount [7]",
+  "csv_name": "A06500",
+  "reference": "1040:55 / 1040A:35 / 1040EZ:10",
+  "type": "Num"
+ },
+ {
+  "key": "tax_liability",
+  "description": "Number of returns with tax liability",
+  "csv_name": "N10300",
+  "reference": "1040:61 / 1040A:35 / 1040EZ: 10",
+  "type": "Count"
+ },
+ {
+  "key": "total_tax_liability_amount",
+  "description": "Total tax liability amount [8]",
+  "csv_name": "A10300",
+  "reference": "1040:61 / 1040A:35 / 1040EZ: 10",
+  "type": "Num"
+ },
+ {
+  "key": "tax_due_at_time_of_filing",
+  "description": "Number of returns with tax due at time of filing",
+  "csv_name": "N11901",
+  "reference": "1040:76 / 1040A:45 / 1040EZ:12",
+  "type": "Count"
+ },
+ {
+  "key": "tax_due_at_time_of_filing_amount",
+  "description": "Tax due at time of filing amount [9]",
+  "csv_name": "A11901",
+  "reference": "1040:76 / 1040A:45 / 1040EZ:12",
+  "type": "Num"
+ },
+ {
+  "key": "overpayments_refunded",
+  "description": "Number of returns with overpayments refunded",
+  "csv_name": "N11902",
+  "reference": "1040:73 / 1040A:42 / 1040EZ:11a",
+  "type": "Count"
+ },
+ {
+  "key": "overpayments_refunded_amount",
+  "description": "Overpayments refunded amount [10]",
+  "csv_name": "A11902",
+  "reference": "1040:73 / 1040A:42 / 1040EZ:11a",
+  "type": "Num"
+ }
+]

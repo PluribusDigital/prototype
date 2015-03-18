@@ -21,3 +21,4 @@ This application is based on the [angular rails book](http://angular-rails.com/)
 Placeholder data services can be run to import csv files from `rails console`
 * `> FdicSdiService.read_definitions` and `> FdicSdiService.read_files` (latter takes a really long time)
 * `> SocialSecurityBeneficiaryService.read_workbook`
+* `> %x(python ./db/migrate/import_irs_agi.py)`
