@@ -1,5 +1,5 @@
 var templicious = angular.module('templicious', [
-    'templates', 'ngRoute', 'ngResource', 'controllers', 'angular-flash.service',
+    'templates', 'ngRoute', 'ngResource', 'controllers', 'directives', 'angular-flash.service',
     'angular-flash.flash-alert-directive', 'ui.bootstrap'
 ]);
 
@@ -21,6 +21,9 @@ templicious.config([
     }).when('/recipe/:id/edit', {
         templateUrl: "recipe/form.html",
         controller: 'RecipeController'
+    }).when('/kiosk', {
+        templateUrl: "kiosk/show.html",
+        controller: 'KioskController'
     }).when('/zip/:id', {
         templateUrl: "zip/show.html",
         controller: 'ZipController'
@@ -29,3 +32,4 @@ templicious.config([
 ]);
 
 var controllers = angular.module('controllers', []);
+var directives  = angular.module('directives', []);
