@@ -1,6 +1,6 @@
 var directives = angular.module('directives');
 
-directives.directive("googleMap", function () {
+directives.directive("googleMap", ['MapInitializer', function (MapInitializer) {
   return {
     restrict: 'AE',
     link: function(scope, elem, attrs) {
@@ -19,11 +19,14 @@ directives.directive("googleMap", function () {
         }
       }
       // draw the map
-      gmap.map = new google.maps.Map(elem[0], gmap.options);
-      if (showTraffic) {
-        gmap.trafficLayer  = new google.maps.TrafficLayer();
-        gmap.trafficLayer.setMap(gmap.map);
-      }
+      MapInitializer.initialized.then(function(){
+        gmap.map = new google.maps.Map(elem[0], gmap.options);
+        if (showTraffic) {
+          gmap.trafficLayer  = new google.maps.TrafficLayer();
+          gmap.trafficLayer.setMap(gmap.map);
+        }
+      });
+      
     }
   };
-});
+}]);

@@ -49,7 +49,7 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div>
           <div class="col-xs-2">
-            <span class="h1">{{zip}}</span>
+            <span class="h1 clearfix">{{zip}}</span>
             <span class="h5">{{areaName}}</span>
           </div>
           <div class="col-xs-10" style="height: 100px;" id="map-canvas"></div>
@@ -77,10 +77,11 @@
           </tab>
           <tab class="table-responsive">
               <tab-heading>
-                  <span class="badge badge-jumbo">&circledS;</span>
+                  <span class="badge badge-jumbo">{{socialSecurityBeneficiaries['Total']}}</span>
                   <h4>Social Security Beneficiaries</h4>
               </tab-heading>
-              <table class="table table-striped">
+              <div id="piechart"></div>
+              <table class="table table-striped col-xs-6">
                   <tbody ng-repeat="(key,value) in socialSecurityBeneficiaries">
                       <tr>
                           <th>{{key}}</th>

@@ -1,7 +1,11 @@
 var controllers = angular.module('controllers');
 
 controllers.controller("ZipController", ['$scope', '$routeParams', '$location', '$resource', '$http', 'flash',
-  function ($scope, $routeParams, $location, $resource, $http, flash) {
+    'ChartInitializer', 'MapInitializer',
+  function ($scope, $routeParams, $location, $resource, $http, flash, ChartInitializer, MapInitializer) {
+      //google.load("visualization", "1", { packages: ["corechart"] });
+      //google.setOnLoadCallback($scope.drawChart);
+
       /************************************************************************************************
       * Route Parameters
       */
@@ -30,7 +34,8 @@ controllers.controller("ZipController", ['$scope', '$routeParams', '$location', 
       SocialSecurityBeneficiaries.get({
           id: $scope.zip
       }, (function (socialSecurityBeneficiaries) {
-          return $scope.socialSecurityBeneficiaries = socialSecurityBeneficiaries;
+          $scope.socialSecurityBeneficiaries = socialSecurityBeneficiaries;
+          ChartInitializer.initialized.then($scope.drawChart)
       }), (function (httpResponse) {
           $scope.socialSecurityBeneficiaries = null;
           return flash.error = "Sorry, Recipe Not Found!";
@@ -41,19 +46,7 @@ controllers.controller("ZipController", ['$scope', '$routeParams', '$location', 
       */
       $scope.home = { lat: 38, lng: -77 };
       $scope.areaName = '';
-
-      $scope.mapOptions = {
-          center: $scope.home,
-          zoom: 13,
-          disableDefaultUI : true
-      },
-
-      // Setup the map & home marker
-      $scope.map = new google.maps.Map(document.getElementById('map-canvas'), $scope.mapOptions);
-      $scope.homeMarker = new google.maps.Marker({
-          position: { lat: $scope.home.lat, lng: $scope.home.lng },
-          //map: $scope.map
-      });
+      $scope.map = null;
 
       $scope.geocodeResultPostalCode = function (data, status, headers, config) {
           // If there are results, extract the latitude and longitude of the zip code's center
@@ -61,9 +54,11 @@ controllers.controller("ZipController", ['$scope', '$routeParams', '$location', 
               var a = data.results[0].geometry.location;
               $scope.home = a;
 
-              $scope.map.setCenter($scope.home);
-              $scope.homeMarker.setPosition($scope.home);
-              $scope.homeMarker.setMap($scope.map);
+              if ($scope.map) {
+                  $scope.map.setCenter($scope.home);
+                  $scope.homeMarker.setPosition($scope.home);
+                  $scope.homeMarker.setMap($scope.map);
+              }
 
               // Name of the zip code (mmm Hack-i-licious)
               var full = data.results[0].formatted_address
@@ -75,6 +70,47 @@ controllers.controller("ZipController", ['$scope', '$routeParams', '$location', 
           }
       };
 
+      $scope.drawMap = function () {
+          $scope.mapOptions = {
+              center: $scope.home,
+              zoom: 13,
+              disableDefaultUI: true
+          },
+
+          // Setup the map & home marker
+          $scope.map = new google.maps.Map(document.getElementById('map-canvas'), $scope.mapOptions);
+          $scope.homeMarker = new google.maps.Marker({
+              position: { lat: $scope.home.lat, lng: $scope.home.lng },
+              map: $scope.map
+          });
+      };
+
+      /************************************************************************************************
+      * Chart
+      */
+
+      $scope.drawChart = function () {
+
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Beneficiaries');
+          data.addColumn('number', 'Count');
+
+          var fields = ['Children', 'Disabled workers', 'Retired workers', 'Spouses', 'Widow(er)s and parents']
+          for (var i = 0; i < fields.length; i++) {
+              var k = fields[i];
+              var v = parseInt($scope.socialSecurityBeneficiaries[k]);
+              data.addRow([k, v]);
+          }
+
+          var options = {
+          };
+
+          var pieDiv = document.getElementById('piechart');
+          var chart = new google.visualization.PieChart(pieDiv);
+
+          chart.draw(data, options);
+      }
+
       /************************************************************************************************
       * Methods
       */
@@ -85,9 +121,12 @@ controllers.controller("ZipController", ['$scope', '$routeParams', '$location', 
       /************************************************************************************************
       * Initialize
       */
+
       $http.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: { components: 'postal_code:' + $scope.zip },
       }).success($scope.geocodeResultPostalCode)
         .error(function (data) { alert('doh'); });
+
+      MapInitializer.initialized.then($scope.drawMap)
   }
 ]);

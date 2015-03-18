@@ -11,7 +11,7 @@ controllers.controller("KioskController", ['$scope', '$routeParams', '$location'
       * WMATA Alerts
       */
       
-
+      
       // var FarmersMarket = $resource('/farmers_markets/:id', {
       //     id: "@id",
       //     format: 'json'
