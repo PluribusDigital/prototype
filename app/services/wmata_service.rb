@@ -12,7 +12,7 @@ class WmataService
   def self.arrivals(station_code)
     # station code is string, either single code or comma-seperated list of codes
     url = '/StationPrediction.svc/json/GetPrediction/' + station_code + "?api_key=" + api_key  
-    self.get(url)
+    return self.get(url)["Trains"]
   end
 
 end

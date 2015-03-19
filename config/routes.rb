@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :recipes
   resources :farmers_markets, only: [:index, :show]
   resources :social_security_beneficiaries, only: [:show]
+  get 'wmata/arrivals' => 'wmata#arrivals'
 
 
   # Example of regular route:

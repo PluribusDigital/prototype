@@ -6,45 +6,24 @@ controllers.controller("KioskController", ['$scope', '$routeParams', '$location'
       * Route Parameters & Defaults
       */
       $scope.wmataArrivals = [];
+      $scope.wmataStationNames = [];
 
       /************************************************************************************************
       * WMATA Alerts
       */
-      var WmataArrival = $resource('', {
+      var WmataArrival = $resource('/wmata/arrivals', {
         format: 'json'
       });
       WmataArrival.query({
-        StationCodes: 'C05',
-        api_key:      configData.wmataApiKey
+        station_codes: 'C05,K01'
       }, function(results) {
-        console.log(results);
-        return $scope.wmataArrivals = results;
+        $scope.wmataArrivals = results;
+        $scope.wmataStationNames = U.uniqueValuesForKey(results,"LocationName")
       });
-
-      
-      // var FarmersMarket = $resource('/farmers_markets/:id', {
-      //     id: "@id",
-      //     format: 'json'
-      // });
-      // FarmersMarket.query({
-      //     zip: $scope.zip
-      // }, function (results) {
-      //     return $scope.farmersMarkets = results;
-      // });
 
       /************************************************************************************************
       * Methods
       */
-      // $scope.gotoZip = function (zip) {
-      //     return $location.path("/zip/" + zip);
-      // };
 
-      /***********
-      * Initialize
-      */
-      // $http.get('https://maps.googleapis.com/maps/api/geocode/json', {
-      //     params: { components: 'postal_code:' + $scope.zip },
-      // }).success($scope.geocodeResultPostalCode)
-      //   .error(function (data) { alert('doh'); });
   }
 ]);

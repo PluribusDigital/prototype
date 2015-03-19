@@ -17,4 +17,5 @@
 //= require angular-flash/dist/angular-flash
 //= require angular-rails-templates
 //= require d3/d3
+//= require utilities
 //= require_tree .
