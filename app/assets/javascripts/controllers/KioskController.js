@@ -5,12 +5,22 @@ controllers.controller("KioskController", ['$scope', '$routeParams', '$location'
       /************************************************************************************************
       * Route Parameters & Defaults
       */
-      // $scope.zip = $routeParams.id;
+      $scope.wmataArrivals = [];
 
       /************************************************************************************************
       * WMATA Alerts
       */
-      
+      var WmataArrival = $resource('', {
+        format: 'json'
+      });
+      WmataArrival.query({
+        StationCodes: 'C05',
+        api_key:      configData.wmataApiKey
+      }, function(results) {
+        console.log(results);
+        return $scope.wmataArrivals = results;
+      });
+
       
       // var FarmersMarket = $resource('/farmers_markets/:id', {
       //     id: "@id",

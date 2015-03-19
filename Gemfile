@@ -45,6 +45,7 @@ group :test, :development do
   gem "teaspoon"
   gem "poltergeist"
   gem "phantomjs"
+  gem 'dotenv-rails'
 end
 
 # Windows
