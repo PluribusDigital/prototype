@@ -35,6 +35,11 @@ group :production, :staging do
   gem "rails_serve_static_assets"
 end
 
+group :development do 
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'cucumber-rails', :require => false
@@ -46,6 +51,7 @@ group :test, :development do
   gem "poltergeist"
   gem "phantomjs"
   gem 'dotenv-rails'
+
 end
 
 # Windows
