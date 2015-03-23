@@ -1,14 +1,8 @@
 <div class="row">
-  <div class="col-md-7">
-    <div google-map style="width:600px;height:400px;" zoom="10" traffic="true" lat="38.8940194" lng="-77.07722"></div>
+  <div google-map style="height:400px;" class="col-xs-12 col-md-6" zoom="10" traffic="true" lat="38.8940194" lng="-77.07722">
+
   </div>
-  <div class="col-md-5">
-    <h2>Metro Departures</h2>
-    <div ng-repeat="station in wmataStationNames">
-      <h3>{{ station }}</h3>
-      <ul ng-repeat="arrival in wmataArrivals | filter:{LocationName:station}">
-        <li>{{ arrival.Line }} {{ arrival.DestinationName }}: {{ arrival.Min }}</li>
-      </ul>
-    </div>
+  <div id="timeline" style="height:400px;" class="col-xs-12 col-md-6">
+
   </div>
 </div>
