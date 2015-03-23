@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :farmers_markets, only: [:index, :show]
   resources :social_security_beneficiaries, only: [:show]
   get 'wmata/arrivals' => 'wmata#arrivals'
+  get 'json_api/:resource_name' => 'json_api#index'
 
 
   # Example of regular route:
