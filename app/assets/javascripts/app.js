@@ -34,6 +34,8 @@ templicious.config([
 var controllers = angular.module('controllers', []);
 var directives  = angular.module('directives', []);
 
+// Other packages = 'geochart', 'table', 'treemap', 'wordtree'
+
 templicious.factory('ChartInitializer', function ($rootScope, $window, $q) {
     var deferred = $q.defer();
 
@@ -48,6 +50,25 @@ templicious.factory('ChartInitializer', function ($rootScope, $window, $q) {
         });
 
     //Usage: ChartInitializer.initialized.then(callback)
+    return {
+        initialized: deferred.promise
+    };
+});
+
+templicious.factory('TimelineInitializer', function ($rootScope, $window, $q) {
+    var deferred = $q.defer();
+
+    $window.google.load('visualization', '1',
+        {
+            packages: ['timeline'],
+            callback: function () {
+                $rootScope.$apply(function () {
+                    deferred.resolve();
+                });
+            }
+        });
+
+    //Usage: TimelineInitializer.initialized.then(callback)
     return {
         initialized: deferred.promise
     };
