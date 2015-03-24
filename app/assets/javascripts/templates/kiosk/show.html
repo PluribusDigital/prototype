@@ -1,8 +1,12 @@
-<div class="row">
-  <div google-map style="height:400px;" class="col-xs-12 col-md-6" zoom="10" traffic="true" lat="38.8940194" lng="-77.07722">
-
-  </div>
-  <div id="timeline" style="height:400px;" class="col-xs-12 col-md-6">
-
-  </div>
+<div ng-switch on="current">
+    <progressbar value="sweep" max="maxSweep" type="info" animate="false"></progressbar>
+    <div ng-switch-when="1" google-map style="height: 500px;" class="col-xs-12" zoom="10" traffic="true" lat="38.8940194" lng="-77.07722">
+    </div>
+    <div ng-switch-when="2" ng-controller="WmataController">
+        <div id="timeline" style="height: 500px;" class="col-xs-12">
+        </div>
+    </div>
+    <div ng-switch-default>
+        <div class="jumbotron">STSI Kiosk</div>
+    </div>
 </div>
